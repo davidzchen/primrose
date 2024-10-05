@@ -14,6 +14,7 @@ cc_test(
     srcs = ["bcd_test.cc"],
     deps = [
         ":bcd",
+        "@googletest//:gtest",
         "@googletest//:gtest_main",
     ],
 )
