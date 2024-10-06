@@ -55,3 +55,5 @@ build:ubsan --copt -O1
 build:ubsan --copt -fno-omit-frame-pointer
 build:ubsan --linkopt -fsanitize=undefined
 build:ubsan --linkopt -lubsan
+
+try-import %workspace%/clang.bazelrc
