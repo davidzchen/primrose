@@ -74,6 +74,9 @@ class UInt24 {
   // Swaps the endianness of this value.
   auto SwapEndian() -> void;
 
+  // Returns the underlying data of the uint24.
+  auto data() -> const std::array<uint8_t, 3>& { return data_; }
+
   // For printing UInt24
   friend auto operator<<(std::ostream& os, const UInt24& value)
       -> std::ostream& {

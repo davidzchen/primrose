@@ -1,5 +1,6 @@
 #include "prim/numeric/int24.h"
 
+#include <array>
 #include <cstdint>
 
 #include "gtest/gtest.h"
@@ -154,6 +155,13 @@ TEST(UInt24, SwapEndian) {
   UInt24 a = 0xAABBCC;
   a.SwapEndian();
   EXPECT_EQ(a, 0xCCBBAA);
+}
+
+TEST(UInt24, Data) {
+  UInt24 a = 0xAABBCC;
+  const std::array<uint8_t, 3>& data = a.data();
+  UInt24 b(data);
+  EXPECT_EQ(b, a);
 }
 
 }  // namespace
